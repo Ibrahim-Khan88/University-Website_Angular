@@ -1,0 +1,73 @@
+<!-- <form [formGroup]="form">
+    <div *ngFor="let field of fields">
+        <select [formControlName]="field.id" id="gender" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+         <option value="Chairman">Chairman</option>
+         <option value="Member">Member</option>    
+         <option value="Provost">Provost</option>
+         <option value="Assistant Provost">Assistant Provost</option>                                     
+        </select>
+    </div>
+</form>
+{{form?.value|json}} -->
+
+<div class="widget-content bg-arielle-smile">
+    <div class="widget-content-wrapper text-white">
+
+        <div class="widget-numbers text-white"><span>User Details</span></div>
+
+    </div>
+</div>
+
+<div class="widget-content bg-arielle">
+
+    <div id="All-data-Container">
+
+        <div style="width: 95%; margin: auto;">
+            <div class="section-title">
+                <h2 id="title-section">Assign Role</h2>
+            </div>
+        </div>
+
+        <div class="All-wrapper">
+
+            <div class="wrapper wrapper--w960">
+                <div class="card card-5">
+                    <div class="card-body">
+                        <form [formGroup]="form">
+
+                            <div *ngFor="let field of fields" class="form-row">
+
+                                <div class="name">{{field.id}}</div>
+                                <div class="value">
+                                    <div class="input-group ">
+
+                                        <select [formControlName]="field.id" id="gender" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+         <option value="Chairman">Chairman</option>
+         <option value="Member">Member</option>    
+         <option value="Provost">Provost</option>
+         <option value="Assistant Provost">Assistant Provost</option>                                     
+        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <!-- {{form?.value|json}} -->
+
+                            <div>
+                                <button type="button" (click)="assignSubmit()" class="btn btn--radius-2 btn--blue">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

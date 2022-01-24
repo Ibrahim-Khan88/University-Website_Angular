@@ -1,0 +1,454 @@
+<!-- <div class="bg-arielle-smile" style="height: 50px; width: 100%;  text-align: center;">
+
+    <p>Registration</p>
+
+</div> -->
+
+
+
+<div class="widget-content bg-arielle-smile">
+    <div class="widget-content-wrapper text-white">
+
+        <div class="widget-numbers text-white"><span>Registration</span></div>
+
+    </div>
+</div>
+
+<div class="widget-content bg-arielle">
+
+    <div id="All-data-Container">
+
+        <div style="width: 95%; margin: auto;">
+            <div class="section-title">
+                <h2 id="title-section">Fill Registration Form</h2>
+            </div>
+        </div>
+
+
+        <form id="investigationForm" [formGroup]="registrationForm" (ngSubmit)="registrationFormSubmit()">
+
+            <div class="All-wrapper">
+
+                <div class="wrapper wrapper--w960">
+                    <div class="card card-5">
+
+                        <div class="card-body">
+
+                            <div class="form-row">
+
+                                <div class="name">Name</div>
+                                <div class="value">
+                                    <div class="input-group ">
+                                        <input [ngClass]="{'borderRed' : registrationForm.get('name')!.errors &&
+                                (registrationForm.get('name')!.touched || registrationForm.get('name')!.dirty)}" formControlName="name" class="input--style-5" type="text" name="Date">
+                                    </div>
+
+                                    <span *ngIf="registrationForm.get('name')!.errors && (registrationForm.get('name')!.touched ||
+                                     registrationForm.get('name')!.dirty)">
+                                            <span *ngIf="registrationForm.get('name')!.errors!['required']"> 
+                                                Name is required</span>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Designation</div>
+                                <div class="value">
+                                    <div class="input-group ">
+
+                                        <select id="gender" formControlName="designation" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+                                                <option value="Associate Professor">Associate Professor</option>
+                                                <option value="Assistant Professor">Assistant Professor</option>
+                                                <option value="Lecturer">Lecturer</option>
+                                            </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="name">Password </div>
+                                <div class="value">
+                                    <div class="input-group ">
+                                        <input [ngClass]="{'borderRed' : registrationForm.get('password')!.errors &&
+                                (registrationForm.get('password')!.touched || registrationForm.get('password')!.dirty)}" formControlName="password" class="input--style-5" type="text" name="Date">
+                                    </div>
+
+                                    <span *ngIf="registrationForm.get('password')!.errors && (registrationForm.get('password')!.touched ||
+                                     registrationForm.get('password')!.dirty)">
+                                            <span *ngIf="registrationForm.get('password')!.errors!['required']"> Password is required</span>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="name">Department</div>
+                                <div class="value">
+                                    <div class="input-group ">
+
+                                        <select id="gender" formControlName="department_name" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+                                                <option  *ngFor="let dept of deptName" [value]=dept>{{dept}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- 
+                            <div class="form-row">
+
+                                <div class="name"> </div>
+                                <div class="value">
+                                    <div class="input-group ">
+                                        <input [ngClass]="{'borderRed' : registrationForm.get('')!.errors &&
+                                (registrationForm.get('')!.touched || registrationForm.get('')!.dirty)}" formControlName="" class="input--style-5" type="text" name="Date">
+                                    </div>
+
+                                    <span *ngIf="registrationForm.get('')!.errors && (registrationForm.get('')!.touched ||
+                                     registrationForm.get('')!.dirty)">
+                                            <span *ngIf="registrationForm.get('')!.errors!['required']">  is required</span>
+                                    </span>
+                                </div>
+                            </div>
+                            -->
+
+
+
+
+                            <div class="form-row">
+
+                                <div class="name">Phone</div>
+                                <div class="value">
+                                    <div class="input-group ">
+                                        <input formControlName="phone" class="input--style-5" type="text">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="name">Gmail</div>
+                                <div class="value">
+                                    <div class="input-group ">
+                                        <input [ngClass]="{'borderRed' : registrationForm.get('email')!.errors &&
+                                (registrationForm.get('email')!.touched || registrationForm.get('email')!.dirty)}" formControlName="email" class="input--style-5" type="text" name="Date">
+                                    </div>
+
+                                    <span *ngIf="registrationForm.get('email')!.errors && (registrationForm.get('email')!.touched ||
+                                     registrationForm.get('email')!.dirty)">
+                                            <span *ngIf="registrationForm.get('email')!.errors!['required']"> Gmail
+                                                 is required</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Room</div>
+                                <div class="value">
+                                    <div class="input-group ">
+
+                                        <select id="gender" formControlName="room_number" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+                                                <option  *ngFor="let room of roomNumber" [value]=room>{{room}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Website</div>
+                                <div class="value">
+                                    <div class="input-group ">
+                                        <input formControlName="website" class="input--style-5" type="text">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-row">
+
+                                <div class="name">Biography Filed Of Specialization</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="biographyFiledOfSpecialization" class="input--style-5" type="text"> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Research Interest</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="researchInterest" class="input--style-5" type="text"></textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Current Research And Collaboration</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="currentResearchAndCollaboration" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="form-row">
+
+                                <div class="name">Fellowship Of Scientific And Professional Sociaties</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="fellowshipOfScientificAndProfessionalSociaties" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Education Experience</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="educationExperience" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Teaching Experience</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="teachingExperience" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Research Experience</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="researchExperience" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Award And Recognition</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="awardAndRecognition" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Publication</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="publication" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Journals</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="journals" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Conference</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="conference" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Graduate Supervision</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="graduateSupervision" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Course Offered</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="courseOffered" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Course Material</div>
+                                <div class="value">
+                                    <div style="height: 80px;" class="input-group ">
+                                        <textarea formControlName="courseMaterial" class="input--style-5" type=""> </textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="name">Book Image</div>
+                                <div class="value">
+                                    <div class="input-group input-border-under-class">
+                                        <input [ngClass]="{'borderRed' : registrationForm.get('filename')!.errors &&
+                                        (registrationForm.get('filename')!.touched || registrationForm.get('filename')!.dirty)}" formControlName="filename" class="input--style-5" type="file" name="filename" (change)="onselectfile($event)">
+                                    </div>
+                                    <span *ngIf="registrationForm.get('filename')!.errors &&
+                                    (registrationForm.get('filename')!.touched || registrationForm.get('filename')!.dirty)">
+                                    <span *ngIf="registrationForm.get('filename')!.errors!['required']">Image is
+                                        required</span>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <!-- <div class="form-row">  
+ 
+                                <div class="name">Room Number</div>
+                                <div class="value">
+                                    <div class="input-group ">
+                                        <input [ngClass]="{'borderRed' : registrationForm.get('name')!.errors &&
+                                (registrationForm.get('room_number')!.touched || registrationForm.get('name')!.dirty)}" formControlName="room_number" class="input--style-5" type="text" name="Date">
+                                    </div>
+
+                                    <span *ngIf="registrationForm.get('room_number')!.errors && (registrationForm.get('room_number')!.touched || registrationForm.get('room_number')!.dirty)">
+                                            <span *ngIf="registrationForm.get('room_number')!.errors!['required']"> Patient
+                                                name is required</span>
+                                    </span>
+                                </div>
+
+                            </div> -->
+
+                            <!-- <div class="form-row">
+
+                                <div class="name">Gender</div>
+                                <div class="value">
+                                    <div class="input-group ">
+
+                                        <select id="gender" formControlName="room_number" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                    </div>
+                                </div>
+
+                            </div> -->
+
+
+                            <div class="form-row">
+
+                                <div class="name">Community Name</div>
+
+                                <mat-form-field style="width:500px !important">
+                                    <input placeholder="Select Investigation" [formControl]="myControl" type="text" matInput [matAutocomplete]="autoo" style="border: none; width: 400px;">
+                                    <mat-autocomplete #autoo="matAutocomplete" (optionSelected)="selectedValue($event.option.value)">
+                                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                            {{option}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+
+                            </div>
+
+                            <!-- Table -->
+                            <table *ngIf="selectedCommunity.length != 0">
+                                <tr>
+                                    <th>Number</th>
+                                    <th>Community</th>
+                                    <th>Delete</th>
+                                </tr>
+
+                                <tr *ngFor="let select of selectedCommunity; index as i">
+                                    <td>{{i+1}}</td>
+                                    <td>{{select}}</td>
+                                    <td><button (click)="deleteSelectedCommunity(select)" type="button" class="delete-btn">Delete</button></td>
+                                </tr>
+
+
+                            </table>
+
+
+
+                            <div>
+                                <button type="button" (click)="registrationFormSubmit()" class="btn btn--radius-2 btn--blue">Submit</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
