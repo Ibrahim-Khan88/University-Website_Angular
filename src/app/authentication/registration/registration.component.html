@@ -5,6 +5,53 @@
 </div> -->
 
 
+<!-- <form [formGroup]="addressForm" class="container mt-3" (ngSubmit)="logValue()">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="form-row">
+                <div style="height: 80px;" class="input-group ">
+                    <textarea formControlName="thana" class="input--style-5" type="text"> </textarea>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary mb-2" (click)="addAddress()">Add Address</button>
+            <section class="container border mb-4 p-3" formArrayName="addresses" *ngFor="let address of addressControls.controls; let i = index;">
+                <div>
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>Address {{i + 1}}</h4>
+                        </div>
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-danger btn-sm" (click)="removeAddress()">Remove</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input type="text" class="form-control" [formControlName]="i" placeholder="St. Thomas Apartment" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="text-right">
+                <input type="submit" class="btn btn-success" value="Submit" />
+            </div>
+
+        </div>
+    </div>
+
+</form> -->
+
+
+
+
+
 
 <div class="widget-content bg-arielle-smile">
     <div class="widget-content-wrapper text-white">
@@ -34,6 +81,8 @@
 
                         <div class="card-body">
 
+
+
                             <div class="form-row">
 
                                 <div class="name">Name</div>
@@ -58,11 +107,15 @@
                                 <div class="value">
                                     <div class="input-group ">
 
-                                        <select id="gender" formControlName="designation" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
-                                                <option value="Associate Professor">Associate Professor</option>
-                                                <option value="Assistant Professor">Assistant Professor</option>
-                                                <option value="Lecturer">Lecturer</option>
-                                            </select>
+                                        <!-- <select id="gender" formControlName="designation_name" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+                                            <option  *ngFor="let designation of designationName" [value]=designation>{{designation}}</option>
+                                        </select> -->
+
+
+                                        <select id="gender" formControlName="designation_name" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
+                                            <option  *ngFor="let designation of designationName" [value]=designation>{{designation}}</option>
+                                        </select>
+
                                     </div>
                                 </div>
 
@@ -191,167 +244,14 @@
 
                             </div>
 
-                            <div class="form-row">
 
-                                <div class="name">Research Interest</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="researchInterest" class="input--style-5" type="text"></textarea>
-                                    </div>
 
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Current Research And Collaboration</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="currentResearchAndCollaboration" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
 
 
 
                             <div class="form-row">
 
-                                <div class="name">Fellowship Of Scientific And Professional Sociaties</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="fellowshipOfScientificAndProfessionalSociaties" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Education Experience</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="educationExperience" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Teaching Experience</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="teachingExperience" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Research Experience</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="researchExperience" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Award And Recognition</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="awardAndRecognition" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Publication</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="publication" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Journals</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="journals" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Conference</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="conference" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Graduate Supervision</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="graduateSupervision" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Course Offered</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="courseOffered" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Course Material</div>
-                                <div class="value">
-                                    <div style="height: 80px;" class="input-group ">
-                                        <textarea formControlName="courseMaterial" class="input--style-5" type=""> </textarea>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="name">Book Image</div>
+                                <div class="name">Image</div>
                                 <div class="value">
                                     <div class="input-group input-border-under-class">
                                         <input [ngClass]="{'borderRed' : registrationForm.get('filename')!.errors &&
@@ -366,40 +266,254 @@
 
                             </div>
 
-                            <!-- <div class="form-row">  
- 
-                                <div class="name">Room Number</div>
-                                <div class="value">
-                                    <div class="input-group ">
-                                        <input [ngClass]="{'borderRed' : registrationForm.get('name')!.errors &&
-                                (registrationForm.get('room_number')!.touched || registrationForm.get('name')!.dirty)}" formControlName="room_number" class="input--style-5" type="text" name="Date">
+                            <div class="space"> </div>
+
+                            <!-- Award and Recognitions -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Award and Recognitions</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('awardAndRecognitions')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('awardAndRecognitions')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
                                     </div>
 
-                                    <span *ngIf="registrationForm.get('room_number')!.errors && (registrationForm.get('room_number')!.touched || registrationForm.get('room_number')!.dirty)">
-                                            <span *ngIf="registrationForm.get('room_number')!.errors!['required']"> Patient
-                                                name is required</span>
-                                    </span>
                                 </div>
 
-                            </div> -->
-
-                            <!-- <div class="form-row">
-
-                                <div class="name">Gender</div>
-                                <div class="value">
-                                    <div class="input-group ">
-
-                                        <select id="gender" formControlName="room_number" name="subject" class="input--style-5" style="height: 35px; width: 100%;">
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Other">Other</option>
-                                            </select>
+                                <section class="section-margin-bottom" formArrayName="awardAndRecognitions" *ngFor="let variable of awardAndRecognitionsControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Award and Recognition {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
                                     </div>
+                                </section>
+                            </div>
+
+
+                            <!-- conferences -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Conferences</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('conferences')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('conferences')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
                                 </div>
 
-                            </div> -->
+                                <section class="section-margin-bottom" formArrayName="conferences" *ngFor="let variable of conferencesControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Conference {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
 
 
+                            <!-- courseMaterials -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Course Materials</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('courseMaterials')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('courseMaterials')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="courseMaterials" *ngFor="let variable of courseMaterialsControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Course Material {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+                            <!-- courseOffereds -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Course Offereds</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('courseOffereds')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('courseOffereds')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="courseOffereds" *ngFor="let variable of courseOfferedsControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Course Offered {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+                            <!-- currentResearchAndCollaborations  -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Current Research And Collaborations</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('currentResearchAndCollaborations')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('currentResearchAndCollaborations')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="currentResearchAndCollaborations" *ngFor="let variable of currentResearchAndCollaborationsControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Current Research And Collaboration {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+                            <!-- educationExperiences -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Education Experiences</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('educationExperiences')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('educationExperiences')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="educationExperiences" *ngFor="let variable of educationExperiencesControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Education Experience {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+
+                            <!-- graduateSupervisions -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Graduate Supervisions</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('graduateSupervisions')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('graduateSupervisions')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="graduateSupervisions" *ngFor="let variable of graduateSupervisionsControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Graduate Supervision {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+                            <!-- journalss -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Journalss</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('journalss')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('journalss')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="journalss" *ngFor="let variable of journalssControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Journals {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+
+                            <!-- publications -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Publications</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('publications')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('publications')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="publications" *ngFor="let variable of publicationsControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Publication {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+
+
+                            <!-- researchExperiences -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Research Experiences</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('researchExperiences')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('researchExperiences')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="researchExperiences" *ngFor="let variable of researchExperiencesControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Research Experience {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+
+                            <!-- teachingExperiences -->
+                            <div class="multiple-field-container">
+                                <div class="form-row">
+                                    <div class="name">Teaching Experiences</div>
+                                    <div class="dynamic-field-button-container">
+                                        <button type="button" (click)="addField('teachingExperiences')" class="dynamic btn btn--radius-2 btn--blue dynamic">Add</button>
+                                        <button type="button" (click)="removeField('teachingExperiences')" class="dynamic btn btn--radius-2 btn--red dynamic">Remove</button>
+                                    </div>
+
+                                </div>
+
+                                <section class="section-margin-bottom" formArrayName="teachingExperiences" *ngFor="let variable of teachingExperiencesControls.controls; let i = index;">
+                                    <div class="form-row">
+                                        <div style="height: 80px;" class="input-group ">
+                                            <textarea placeholder="Teaching Experience {{i + 1}}" [formControlName]="i" class="input--style-5" type="text"> </textarea>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+
+
+
+                            <!-- 
                             <div class="form-row">
 
                                 <div class="name">Community Name</div>
@@ -415,7 +529,7 @@
 
                             </div>
 
-                            <!-- Table -->
+                      
                             <table *ngIf="selectedCommunity.length != 0">
                                 <tr>
                                     <th>Number</th>
@@ -430,7 +544,7 @@
                                 </tr>
 
 
-                            </table>
+                            </table> -->
 
 
 
@@ -452,3 +566,175 @@
     </div>
 
 </div>
+
+
+<div id="lodingDiv">
+    <i class="fas fa-circle-notch fa-spin"></i>
+    <div> Please wait.. </div>
+</div>
+
+
+<div id="backgroundloding">
+    <!-- <i style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+    font-size: 30px; color: white;" class="fas fa-circle-notch fa-spin"></i> -->
+</div>
+
+<!-- 
+
+<div class="form-row">
+
+    <div class="name">Research Interest</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="researchInterest" class="input--style-5" type="text"></textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Current Research And Collaboration</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="currentResearchAndCollaboration" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="form-row">
+
+    <div class="name">Fellowship Of Scientific And Professional Sociaties</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="fellowshipOfScientificAndProfessionalSociaties" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Education Experience</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="educationExperience" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Teaching Experience</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="teachingExperience" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Research Experience</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="researchExperience" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Award And Recognition</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="awardAndRecognition" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Publication</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="publication" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Journals</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="journals" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Conference</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="conference" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Graduate Supervision</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="graduateSupervision" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Course Offered</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="courseOffered" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="form-row">
+
+    <div class="name">Course Material</div>
+    <div class="value">
+        <div style="height: 80px;" class="input-group ">
+            <textarea formControlName="courseMaterial" class="input--style-5" type=""> </textarea>
+        </div>
+
+    </div>
+
+</div> -->

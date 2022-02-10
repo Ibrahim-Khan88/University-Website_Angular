@@ -235,3 +235,44 @@ a span:hover {
         justify-content: center;
     }
 }
+
+
+/*  Loading section */
+
+#lodingDiv {
+    height: 0;
+    width: 30%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: white;
+    text-align: center;
+}
+
+#lodingDiv i {
+    margin-top: 20px;
+    font-size: 25px;
+    color: black;
+}
+
+#lodingDiv div {
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+#backgroundloding {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    height: 0;
+    opacity: 0.7;
+    background-color: gray;
+}
+
+
+/* end loding */

@@ -16,14 +16,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { UserPageComponent } from './user-page/user-page.component'; 
+import { UserPageComponent } from './user-page/user-page.component';
+import { RegistrationTypeSelectComponent } from './registration-type-select/registration-type-select.component'; 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegistrationComponent,
-    UserPageComponent
+    UserPageComponent,
+    RegistrationTypeSelectComponent
   ],
   imports: [
     CommonModule,

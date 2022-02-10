@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SuperAdminModule } from './super-admin/super-admin.module';
+import { DepartmentAdminModule } from './department-admin/department-admin.module';
+import { UserModule } from './user/user.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +22,7 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input'; 
-import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NgbModule,
     HttpClientModule,
     SuperAdminModule,
+    DepartmentAdminModule,
+    UserModule,
     AuthenticationModule,
     FormsModule,
     ReactiveFormsModule,
