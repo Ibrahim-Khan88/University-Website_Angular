@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this._storageService.clear();
+
     this.loginForm.patchValue({
       gmail : "dummydata@gmail.com",
       password : "11"
@@ -58,6 +60,7 @@ export class LoginComponent implements OnInit {
   loginFormSubmit() {
 
     // this.router.navigate(["/department-admin/page"]);
+    this._storageService.clear();
 
 
     if (this.loginForm.valid) {
@@ -99,7 +102,7 @@ export class LoginComponent implements OnInit {
 
                   if (this.deptName.indexOf(value) !== -1) {
                     this.check = true;
-                    this.router.navigate(["/department-admin/page"]);
+                    this._storageService.set("department-admin", true);
                   }
 
                 });
@@ -107,12 +110,14 @@ export class LoginComponent implements OnInit {
                 //For At least one access user
                 if(!this.check){
                   if (this.loginResponse.accessCommunity.length > 0){
-                    this.router.navigate(["/user/access-user"]);
+                    this._storageService.set("at-leastone", true);
                   }
                   else{
-                    this.router.navigate(["/user/user"]);
+                    this._storageService.set("only-read", true);
                   }
                 }
+
+                this.router.navigate(["/user/user"]);
             
 
               },

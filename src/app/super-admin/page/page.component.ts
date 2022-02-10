@@ -203,6 +203,12 @@ export class PageComponent implements OnInit {
     this.roleInitializer();
     this.selectedRoleForMember = "";
     this.selectedMemberId = "";
+    this.postForm.patchValue({
+      title:"",
+      body:"",
+      community_name:null,
+      category_name:null
+    })
   //  console.log(this.formdata.getAll);
 
   }
@@ -230,10 +236,12 @@ export class PageComponent implements OnInit {
       data => {
         this.toastr.success("Posted successfully", "Success");
         this.loadingClose();
+        this.clearData();
       },
 
       error => {
         this.loadingClose();
+        this.clearData();
         this.toastr.error("An error has occured", "Error");
       }
     );
